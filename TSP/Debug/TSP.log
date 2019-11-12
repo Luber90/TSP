@@ -1,4 +1,3 @@
-﻿  TSP.cpp
-C:\Users\Luber\Desktop\piter\japierdole\TSP\TSP.cpp(139,12): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
-C:\Users\Luber\Desktop\piter\japierdole\TSP\TSP.cpp(135): warning C4715: "wczytaj”: niewszystkie ścieżki kodu zwracają wartość
+﻿  tsp1.cpp
+C:\Users\Luber\Desktop\piter\japierdole\TSP\tsp1.cpp(164): warning C4715: "wczytaj”: niewszystkie ścieżki kodu zwracają wartość
   TSP.vcxproj -> C:\Users\Luber\Desktop\piter\japierdole\TSP\Debug\TSP.exe

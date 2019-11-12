@@ -152,6 +152,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="TSP.cpp" />
+    <ClCompile Include="tsp1.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="tsp1.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
