@@ -1,1 +1,5 @@
-﻿  TSP.vcxproj -> C:\Users\Luber\Desktop\piter\japierdole\TSP\Debug\TSP.exe
+﻿  TSP.cpp
+C:\Users\Luber\Desktop\piter\japierdole\TSP\TSP.cpp(139,12): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
+C:\Users\Luber\Desktop\piter\japierdole\TSP\TSP.cpp(135): warning C4715: "wczytaj”: niewszystkie ścieżki kodu zwracają wartość
+LINK : fatal error LNK1168: nie można otworzyć pliku C:\Users\Luber\Desktop\piter\japierdole\TSP\Debug\TSP.exe do zapisu
+D:\Program Files (x86)\Microsoft Visual Studio\2017\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(810,5): error MSB6006: Polecenie „link.exe” zakończone przez kod 1168.
