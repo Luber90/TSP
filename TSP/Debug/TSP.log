@@ -1,3 +1,11 @@
-﻿  tsp1.cpp
-C:\Users\Luber\Desktop\piter\japierdole\TSP\tsp1.cpp(164): warning C4715: "wczytaj”: niewszystkie ścieżki kodu zwracają wartość
-  TSP.vcxproj -> C:\Users\Luber\Desktop\piter\japierdole\TSP\Debug\TSP.exe
+﻿  ACO optimalization2.cpp
+C:\Users\piotr\OneDrive\Pulpit\TSP\TSP\TSP\ACO optimalization2.cpp(48,38): warning C4244: "return": konwersja z "double" do "int", możliwa utrata danych
+C:\Users\piotr\OneDrive\Pulpit\TSP\TSP\TSP\ACO optimalization2.cpp(10,9): warning C4101: "next": lokalna zmienna, do której nie istnieje odwołanie
+  TSP.cpp
+C:\Users\piotr\OneDrive\Pulpit\TSP\TSP\TSP\ACO optimalization2.cpp(55,26): warning C4101: "pheromone_change": lokalna zmienna, do której nie istnieje odwołanie
+  tsp1.cpp
+  Generowanie kodu...
+C:\Users\piotr\OneDrive\Pulpit\TSP\TSP\TSP\TSP.cpp(15,12): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
+C:\Users\piotr\OneDrive\Pulpit\TSP\TSP\TSP\tsp1.cpp(164): warning C4715: "wczytaj”: niewszystkie ścieżki kodu zwracają wartość
+  LINK : nie znaleziono elementu C:\Users\piotr\OneDrive\Pulpit\TSP\TSP\TSP\Debug\TSP.exe ani nie został on skompilowany podczas ostatniego konsolidowania przyrostowego; zostanie wykonana pełna konsolidacja
+  TSP.vcxproj -> C:\Users\piotr\OneDrive\Pulpit\TSP\TSP\TSP\Debug\TSP.exe

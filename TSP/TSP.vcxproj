@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ACO optimalization2.cpp" />
     <ClCompile Include="TSP.cpp" />
     <ClCompile Include="tsp1.cpp" />
   </ItemGroup>

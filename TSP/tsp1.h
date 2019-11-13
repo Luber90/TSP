@@ -12,7 +12,7 @@ using namespace std;
 
 struct Dane {
 	int** verticals, * path, vnumber;
-	double** matrix, dist = 0;
+	double** matrix, ** pheromone_tab, dist = 0;
 	bool* visited;
 };
 bool isin(int n, int* tab, int r);
@@ -24,5 +24,9 @@ void TSP(int v, Dane* dane);
 void show(Dane dane);
 Dane wczytaj(string nazwa);
 
+void TSP_ACO(Dane* dane);
+void find_path_ACO(int v, int counter, Dane* dane);
+void Pheromone_ACO(Dane* dane);
+int Probability_ACO(int v, Dane* dane);
 
 #endif
