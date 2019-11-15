@@ -130,7 +130,8 @@ Dane wczytaj(string nazwa) {
 		//tablica z odleglosciami
 		dane.matrix = new double* [dane.vnumber];
 
-
+		//tablica z feromonami
+		dane.pheromone_tab = new double* [dane.vnumber];
 
 		//tablica z wspolrzednymi wierzcholkow
 		dane.verticals = new int* [dane.vnumber];
@@ -144,6 +145,13 @@ Dane wczytaj(string nazwa) {
 		for (int i = 0; i < dane.vnumber; i++)
 		{
 			dane.matrix[i] = new double[dane.vnumber];
+
+			//inicjalizacja feromonow
+			dane.pheromone_tab[i] = new double[dane.vnumber];
+			for (int j = 0; j < dane.vnumber; j++)
+			{
+				dane.pheromone_tab[i][j] = 2;
+			}
 
 
 

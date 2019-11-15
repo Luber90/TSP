@@ -1,4 +1,0 @@
-﻿  aco_opti.cpp
-C:\Users\piotr\OneDrive\Pulpit\TSP-master\TSP\aco_opti.cpp(46,38): warning C4244: "return": konwersja z "double" do "int", możliwa utrata danych
-C:\Users\piotr\OneDrive\Pulpit\TSP-master\TSP\aco_opti.cpp(9,9): warning C4101: "next": lokalna zmienna, do której nie istnieje odwołanie
-  TSP.vcxproj -> C:\Users\piotr\OneDrive\Pulpit\TSP-master\TSP\Debug\TSP.exe

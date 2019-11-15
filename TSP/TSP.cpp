@@ -17,10 +17,13 @@ int main()
 	//Otwieramy plik, rozwijamy tablice oraz zapisujemy wierzchołki z pliku
 	dane =& wczytaj("plik.txt");
 	//Zachlanny
-	TSP(1, dane);
-	cout << "Dystans: " << dane->dist << endl;
+	//TSP(1, dane);
+	//cout << "Dystans: " << dane->dist << endl;
+	//dane->dist = 0;
+	
 	//Mroweczki Piotreczka
-	//...
+	TSP_ACO(dane);
+	show1(dane);
 	system("PAUSE");
 	return 0;
 }

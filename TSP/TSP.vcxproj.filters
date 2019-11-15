@@ -21,7 +21,7 @@
     <ClCompile Include="tsp1.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
-    <ClCompile Include="ACO optimalization2.cpp">
+    <ClCompile Include="aco_opti.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
   </ItemGroup>
