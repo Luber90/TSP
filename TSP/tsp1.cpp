@@ -121,11 +121,12 @@ Dane wczytaj(string nazwa) {
 	ifstream plik;
 	Dane dane;
 	int num;
-	plik.open("plik.txt", ios::in);
+	plik.open(nazwa, ios::in);
 	if (plik.good() == true)
 	{
 		//zapisujemy liczbe wierzcholkow
 		plik >> dane.vnumber;
+		cout << dane.vnumber;
 
 		//tablica z odleglosciami
 		dane.matrix = new double* [dane.vnumber];

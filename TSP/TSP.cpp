@@ -22,8 +22,8 @@ int main()
 	//dane->dist = 0;
 	
 	//Mroweczki Piotreczka
-	TSP_ACO(dane);
-	show1(dane);
+	TSP_ACO(dane, 100000);
+	//show1(dane);
 	system("PAUSE");
 	return 0;
 }

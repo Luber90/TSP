@@ -21,12 +21,12 @@ void gen(int n, string name);
 void distance(Dane* dane);
 void find_path(int v, Dane* dane, int counter);
 void TSP(int v, Dane* dane);
-void show(Dane* dane);
+void show(Dane dane);
 Dane wczytaj(string nazwa);
 
-void TSP_ACO(Dane* dane);
+void TSP_ACO(Dane* dane, int ile);
 void find_path_ACO(int v, int counter, Dane* dane);
-void Pheromone_ACO(Dane* dane, double dist);
+void Pheromone_ACO(Dane* dane);
 int Probability_ACO(int v, Dane* dane);
 void show1(Dane* dane);
 
