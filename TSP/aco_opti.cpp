@@ -118,15 +118,17 @@ void show1(Dane* dane)
 	}
 }
 
-void TSP_ACO(Dane* dane)
+void TSP_ACO(Dane* dane, int ile)
 {
 	int j, i, v;
 
 	//robimy to dla kilku mrowek, stad petla
-	for (j = 0; j <100000; j++)
+	for (j = 0; j <ile; j++)
 	{
+		//zerowanie odwiedzonych
 		for (i = 0; i < dane->vnumber; i++)
 			dane->visited[i] = 0;
+
 		//v = rand() % (dane->vnumber) ;
 		v = 0;
 		//cout << v << endl;
@@ -135,8 +137,10 @@ void TSP_ACO(Dane* dane)
 
 		//(funcja na dodanie feromonow na podstawie path)
 		Pheromone_ACO(dane);
+
 		//show1(dane);
-		if (j < 99999)
+
+		if (j < ile-1)
 			dane->dist = 0;
 		
 	}
@@ -146,8 +150,11 @@ void TSP_ACO(Dane* dane)
 	int current = 0;
 	double dystans=0;
 	
+	// zerowanie odwiedzonych
 	for (i = 0; i < dane->vnumber; i++)
 		dane->visited[i] = 0;
+
+	// WYbieramy najkrotsza scie¿ke tylko wed³ug feromonow
 
 	dane->path[0] = 0;
 	dane->visited[0] = 1;
@@ -167,6 +174,7 @@ void TSP_ACO(Dane* dane)
 				}
 			}
 		}
+
 		dane->visited[dane->path[i]] = 1;
 		dystans += dane->matrix[current][dane->path[i]];
 		current = dane->path[i];
@@ -175,6 +183,8 @@ void TSP_ACO(Dane* dane)
 	
 	dystans += dane->matrix[0][dane->path[dane->vnumber-1]];
 
+	// tutaj printujemy odleglosc ostatniej wykonanej sciezki na podstawie feromonow i odleglosci
+
 	for (j = 0; j < dane->vnumber-1; j++)
 	{
 		//cout << dane->path[j] + 1 << " - "<< dane->path[j+1] +1 << " dystans:    "<< dane->matrix[j][j+1] << " ";
@@ -182,6 +192,7 @@ void TSP_ACO(Dane* dane)
 
 		cout << "wierzcholek: " << dane->path[j] + 1 << endl;
 	}
+
 	cout <<"wierzcholek: "<< dane->path[0] + 1 << endl;
 	cout << dystans<< " "<< dane->dist << endl;
 	//show1(dane);
