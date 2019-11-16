@@ -126,7 +126,7 @@ Dane wczytaj(string nazwa) {
 	{
 		//zapisujemy liczbe wierzcholkow
 		plik >> dane.vnumber;
-		cout << dane.vnumber;
+		cout << "Liczba wierzcholkow: "<< dane.vnumber << endl;
 
 		//tablica z odleglosciami
 		dane.matrix = new double* [dane.vnumber];
