@@ -7,7 +7,7 @@ using namespace std;
 int Probability_ACO(int v, Dane* dane)
 {
 	int i, next, counter = 0, random_number, actual = -1;
-	double numbers, distance, alfa = 2, beta = 3, probability, licznik, mianownik = 0, probability_tab[150] = { 0 };
+	double numbers, distance, alfa = 2, beta = 3, probability, licznik, mianownik = 0, probability_tab[15000] = { 0 };
 
 	//liczymy mianownik
 	for (i = 0; i < dane->vnumber; i++)
@@ -29,8 +29,8 @@ int Probability_ACO(int v, Dane* dane)
 			distance = 1 / dane->matrix[v][i];
 			licznik = pow(dane->pheromone_tab[v][i], alfa) * pow(distance, beta);
 			probability = licznik / mianownik;
-			//probability = round(probability * 10000) / 10000;
-			numbers = probability * 100;
+			probability = round(probability * 100.0) / 100.0;
+			numbers = probability * 10000.0;
 			//cout <<"numbers: " << numbers << endl;
 			while (counter < numbers)
 			{
@@ -120,7 +120,9 @@ void show1(Dane* dane)
 
 void TSP_ACO(Dane* dane, int ile)
 {
-	int j, i, v;
+	int j, i, v, * minitab = new int[dane->vnumber];
+	double mini = 999999999;
+	
 
 	//robimy to dla kilku mrowek, stad petla
 	for (j = 0; j <ile; j++)
@@ -135,9 +137,26 @@ void TSP_ACO(Dane* dane, int ile)
 		find_path_ACO(v, 0, dane);
 		dane->dist += dane->matrix[v][dane->path[dane->vnumber-1]];
 
+		if (dane->dist < mini) {
+			mini = dane->dist;
+			for (int q = 0; q < dane->vnumber; q++) {
+				minitab[q] = dane->path[q];
+			}
+		}
 		//(funcja na dodanie feromonow na podstawie path)
 		Pheromone_ACO(dane);
+		//Sprawdzanie poprawnosci
+		/*
+		for (int m = 0; m < dane->vnumber; m++) {
+			if (!(isin(m, dane->path, dane->vnumber))) {
+				cout << "blad" << j << endl;
+				for (int z = 0; z < dane->vnumber; z++) {
+					cout << dane->path[z] << " ";
 
+				}
+				cout << endl;
+			}
+		}*/
 		//show1(dane);
 
 		if (j < ile-1)
@@ -145,6 +164,13 @@ void TSP_ACO(Dane* dane, int ile)
 		
 	}
 
+	for (int z = 0; z < dane->vnumber; z++) {
+		cout << minitab[z] << " ";
+
+	}
+	cout << endl << mini << endl;
+
+	/*
 	double suma = 0;
 	double min = 0;
 	int current = 0;
@@ -190,10 +216,11 @@ void TSP_ACO(Dane* dane, int ile)
 		//cout << dane->path[j] + 1 << " - "<< dane->path[j+1] +1 << " dystans:    "<< dane->matrix[j][j+1] << " ";
 		//suma += dane->matrix[dane->path[j]][dane->path[j + 1]];
 
-		cout << "wierzcholek: " << dane->path[j] + 1 << endl;
+		//cout << "wierzcholek: " << dane->path[j] + 1 << endl;
 	}
 
-	cout <<"wierzcholek: "<< dane->path[0] + 1 << endl;
-	cout << dystans<< " "<< dane->dist << endl;
+	//cout <<"wierzcholek: "<< dane->path[0] + 1 << endl;
+	//cout << dystans<< " "<< dane->dist << endl;
 	//show1(dane);
+	*/
 }
