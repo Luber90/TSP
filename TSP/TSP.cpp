@@ -18,9 +18,9 @@ void bestalpha(Dane* dane)
 		{
 			cout << "alfa " << i << "beta" << j << endl;
 			TSP_ACO(dane, 20000, i, j);
-			for (int k = 0; i < dane->vnumber; k++)
+			for (int k = 0; k < dane->vnumber; k++)
 			{
-				for (int d = 0; j < dane->vnumber; d++)
+				for (int d = 0; d < dane->vnumber; d++)
 				{
 					dane->pheromone_tab[k][d] = 2;
 				}
