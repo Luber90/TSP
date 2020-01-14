@@ -6,7 +6,8 @@
 #include <limits>
 using namespace std;
 
-const int LICZBA = 52;
+const int LICZBA = 48, DIST = 3;
+const double NAGRODA = 25000, REDUCTION = 0.92;
 
 int Probability_ACO(int v, Dane* dane, double alpha, double betha)
 {
@@ -34,7 +35,7 @@ int Probability_ACO(int v, Dane* dane, double alpha, double betha)
 		if (dane->visited[i] == 0)
 		{
 			//jak ze wzoru
-			distance = 1 / dane->matrix[v][i];
+			distance = DIST / dane->matrix[v][i];
 			licznik = pow(dane->pheromone_tab[v][i], alfa) * pow(distance, beta);
 			if (licznik == 0) {
 				
@@ -54,8 +55,8 @@ int Probability_ACO(int v, Dane* dane, double alpha, double betha)
 	}
 	if (counter1 + counter2 == dane->vnumber) {
 		for (i = 0; i < counter2; i++) {
-			cout << "feromon " << tabi[i]<< " " << dane->pheromone_tab[v][i]<<endl;
-			cout << "1/dystans " << tabi[i] << " " << 1 / dane->matrix[v][i] << endl;
+			//cout << "feromon " << tabi[i]<< " " << dane->pheromone_tab[v][i]<<endl;
+			//cout << "1/dystans " << tabi[i] << " " << 1 / dane->matrix[v][i] << endl;
 			ar[tabi[i]] = pow(dane->pheromone_tab[v][i], alfa) * 10000000000000 * pow(1 / dane->matrix[v][i], beta);
 		}
 
@@ -69,7 +70,7 @@ int Probability_ACO(int v, Dane* dane, double alpha, double betha)
 void Pheromone_ACO(Dane* dane)
 {
 	int i, j;
-	double reduction = 0.84, pheromone_change = 10000 / dane->dist;
+	double reduction = REDUCTION, pheromone_change = NAGRODA /( pow(dane->dist, 2));
 	
 	for (i = 0; i < dane->vnumber - 1; i++)
 	{
@@ -134,14 +135,14 @@ void show1(Dane* dane)
 		{
 			cout << dane->pheromone_tab[i][j] << " ";
 		}
-		cout << endl;
+		cout <<"//"<< endl;
 	}
 }
 
 void TSP_ACO(Dane* dane, int ile, double alpha, double betha)
 {
-	int j, i, v, * minitab = new int[dane->vnumber];
-	double mini = 999999999;
+	int j, i, v, minitab[LICZBA];
+	double mini = 999999999, avrg = 0.0, last = 0.0;
 	
 
 	//robimy to dla kilku mrowek, stad petla
@@ -156,8 +157,11 @@ void TSP_ACO(Dane* dane, int ile, double alpha, double betha)
 		//cout << v << endl;
 		find_path_ACO(v, 0, dane, alpha, betha);
 		dane->dist += dane->matrix[v][dane->path[dane->vnumber-1]];
-		if (j % 1000 == 0) {
-			cout << j << " " << mini << " " << dane->dist << endl;
+		avrg += dane->dist;
+		if ((j+1) % 1000 == 0) {
+			cout << j + 1 << " " << mini << " " << dane->dist << " srednia:" << avrg/1000 << endl;
+			//show1(dane);
+			avrg = 0.0;
 		}
 		if (dane->dist < mini) {
 			mini = dane->dist;

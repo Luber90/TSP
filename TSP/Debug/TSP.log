@@ -1,7 +1,7 @@
 ﻿  aco_opti.cpp
-C:\Users\Luber\Desktop\piter\japierdole\TSP\aco_opti.cpp(13,16): warning C4244: "inicjowanie": konwersja z "_Rep" do "unsigned int", możliwa utrata danych
-C:\Users\Luber\Desktop\piter\japierdole\TSP\aco_opti.cpp(13,16): warning C4244:         with
-C:\Users\Luber\Desktop\piter\japierdole\TSP\aco_opti.cpp(13,16): warning C4244:         [
-C:\Users\Luber\Desktop\piter\japierdole\TSP\aco_opti.cpp(13,16): warning C4244:             _Rep=std::chrono::system_clock::rep
-C:\Users\Luber\Desktop\piter\japierdole\TSP\aco_opti.cpp(13,16): warning C4244:         ]
+C:\Users\Luber\Desktop\piter\japierdole\TSP\aco_opti.cpp(14,16): warning C4244: "inicjowanie": konwersja z "_Rep" do "unsigned int", możliwa utrata danych
+C:\Users\Luber\Desktop\piter\japierdole\TSP\aco_opti.cpp(14,16): warning C4244:         with
+C:\Users\Luber\Desktop\piter\japierdole\TSP\aco_opti.cpp(14,16): warning C4244:         [
+C:\Users\Luber\Desktop\piter\japierdole\TSP\aco_opti.cpp(14,16): warning C4244:             _Rep=std::chrono::system_clock::rep
+C:\Users\Luber\Desktop\piter\japierdole\TSP\aco_opti.cpp(14,16): warning C4244:         ]
   TSP.vcxproj -> C:\Users\Luber\Desktop\piter\japierdole\TSP\Debug\TSP.exe

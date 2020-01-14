@@ -35,14 +35,14 @@ int main()
 	srand(time(NULL));
 	Dane *dane;
 	//Otwieramy plik, rozwijamy tablice oraz zapisujemy wierzchołki z pliku
-	dane =& wczytaj("berlin52.txt");
+	dane =& wczytaj("att48.txt");
 	//Zachlanny
 	//TSP(1, dane);
 	//cout << "Dystans: " << dane->dist << endl;
 	//dane->dist = 0;
 	//bestalpha(dane);
 	//Mroweczki Piotreczka
-	TSP_ACO(dane, 30000, 1, 1);
+	TSP_ACO(dane, 30000, 1.025, 1);
 	//show1(dane);
 	system("PAUSE");
 	return 0;
