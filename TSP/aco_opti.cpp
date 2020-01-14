@@ -15,8 +15,9 @@ int Probability_ACO(int v, Dane* dane, double alpha, double betha)
 	double acu=0.0,mianownik=0.0, distance, alfa = alpha, beta = betha, licznik;
 	default_random_engine generator(seed);
 	array<double, LICZBA> ar;
-	int tabi[52] = { 0 };
+	int tabi[LICZBA] = { 0 };
 	//liczymy mianownik
+	/*
 	for (i = 0; i < dane->vnumber; i++)
 	{
 		if (dane->visited[i] == 0)
@@ -25,7 +26,7 @@ int Probability_ACO(int v, Dane* dane, double alpha, double betha)
 			distance = 1 / dane->matrix[v][i];
 			mianownik += pow(dane->pheromone_tab[v][i], alfa) * pow(distance, beta);
 		}
-	}
+	}*/
 
 	//liczymy prawdopodobienstwa
 	for (i = 0; i < dane->vnumber; i++){
@@ -53,7 +54,9 @@ int Probability_ACO(int v, Dane* dane, double alpha, double betha)
 	}
 	if (counter1 + counter2 == dane->vnumber) {
 		for (i = 0; i < counter2; i++) {
-			ar[tabi[i]] = dane->matrix[v][tabi[i]];
+			cout << "feromon " << tabi[i]<< " " << dane->pheromone_tab[v][i]<<endl;
+			cout << "1/dystans " << tabi[i] << " " << 1 / dane->matrix[v][i] << endl;
+			ar[tabi[i]] = pow(dane->pheromone_tab[v][i], alfa) * 10000000000000 * pow(1 / dane->matrix[v][i], beta);
 		}
 
 	}
@@ -66,7 +69,7 @@ int Probability_ACO(int v, Dane* dane, double alpha, double betha)
 void Pheromone_ACO(Dane* dane)
 {
 	int i, j;
-	double reduction = 0.94, pheromone_change = 10000 / dane->dist;
+	double reduction = 0.84, pheromone_change = 10000 / dane->dist;
 	
 	for (i = 0; i < dane->vnumber - 1; i++)
 	{
@@ -153,7 +156,9 @@ void TSP_ACO(Dane* dane, int ile, double alpha, double betha)
 		//cout << v << endl;
 		find_path_ACO(v, 0, dane, alpha, betha);
 		dane->dist += dane->matrix[v][dane->path[dane->vnumber-1]];
-
+		if (j % 1000 == 0) {
+			cout << j << " " << mini << " " << dane->dist << endl;
+		}
 		if (dane->dist < mini) {
 			mini = dane->dist;
 			for (int q = 0; q < dane->vnumber; q++) {

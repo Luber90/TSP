@@ -13,7 +13,8 @@ struct dane;
 void bestalpha(Dane* dane)
 {
 	int i=1, j=1;
-	for (i; i <= 4; i++) {
+	for (i; i <= 2; i++)
+	{
 		for (j; j <= 4; j++)
 		{
 			cout << "alfa " << i << "beta" << j << endl;
@@ -39,9 +40,9 @@ int main()
 	//TSP(1, dane);
 	//cout << "Dystans: " << dane->dist << endl;
 	//dane->dist = 0;
-	bestalpha(dane);
+	//bestalpha(dane);
 	//Mroweczki Piotreczka
-	//TSP_ACO(dane, 20000, 1, 1);
+	TSP_ACO(dane, 30000, 1, 1);
 	//show1(dane);
 	system("PAUSE");
 	return 0;
