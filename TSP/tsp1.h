@@ -24,10 +24,10 @@ void TSP(int v, Dane* dane);
 void show(Dane dane);
 Dane wczytaj(string nazwa);
 
-void TSP_ACO(Dane* dane, int ile);
-void find_path_ACO(int v, int counter, Dane* dane);
+void TSP_ACO(Dane* dane, int ile, double alpha, double betha);
+void find_path_ACO(int v, int counter, Dane* dane, double alpha, double betha);
 void Pheromone_ACO(Dane* dane);
-int Probability_ACO(int v, Dane* dane);
+int Probability_ACO(int v, Dane* dane, double alpha, double betha);
 void show1(Dane* dane);
 
 #endif

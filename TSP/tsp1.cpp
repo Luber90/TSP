@@ -145,7 +145,6 @@ Dane wczytaj(string nazwa) {
 		for (int i = 0; i < dane.vnumber; i++)
 		{
 			dane.matrix[i] = new double[dane.vnumber];
-
 			//inicjalizacja feromonow
 			dane.pheromone_tab[i] = new double[dane.vnumber];
 			for (int j = 0; j < dane.vnumber; j++)

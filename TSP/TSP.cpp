@@ -10,19 +10,38 @@ using namespace std;
 
 struct dane;
 
+void bestalpha(Dane* dane)
+{
+	int i=1, j=1;
+	for (i; i <= 4; i++) {
+		for (j; j <= 4; j++)
+		{
+			cout << "alfa " << i << "beta" << j << endl;
+			TSP_ACO(dane, 20000, i, j);
+			for (int k = 0; i < dane->vnumber; k++)
+			{
+				for (int d = 0; j < dane->vnumber; d++)
+				{
+					dane->pheromone_tab[k][d] = 2;
+				}
+			}
+		}
+	}
+}
+
 int main()
 {
 	srand(time(NULL));
 	Dane *dane;
 	//Otwieramy plik, rozwijamy tablice oraz zapisujemy wierzchołki z pliku
-	dane =& wczytaj("plik.txt");
+	dane =& wczytaj("berlin52.txt");
 	//Zachlanny
 	//TSP(1, dane);
 	//cout << "Dystans: " << dane->dist << endl;
 	//dane->dist = 0;
-	
+	bestalpha(dane);
 	//Mroweczki Piotreczka
-	TSP_ACO(dane, 1000);
+	//TSP_ACO(dane, 20000, 1, 1);
 	//show1(dane);
 	system("PAUSE");
 	return 0;
