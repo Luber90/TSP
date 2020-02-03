@@ -4,11 +4,11 @@
 #include <array>
 #include<windows.h>
 #include <limits>
+#include <cmath>
 using namespace std;
 
-const int LICZBA = 48, DIST = 3;
-const double NAGRODA = 25000, REDUCTION = 0.92;
-
+const int LICZBA = 51, DIST = 1;
+const double NAGRODA = 4 * pow(10, 7), REDUCTION = 0.94;
 int Probability_ACO(int v, Dane* dane, double alpha, double betha)
 {
 	unsigned seed = chrono::system_clock::now().time_since_epoch().count();
@@ -70,7 +70,7 @@ int Probability_ACO(int v, Dane* dane, double alpha, double betha)
 void Pheromone_ACO(Dane* dane)
 {
 	int i, j;
-	double reduction = REDUCTION, pheromone_change = NAGRODA /( pow(dane->dist, 2));
+	double reduction = REDUCTION, pheromone_change =NAGRODA /pow(dane->dist, 3);
 	
 	for (i = 0; i < dane->vnumber - 1; i++)
 	{
@@ -158,8 +158,8 @@ void TSP_ACO(Dane* dane, int ile, double alpha, double betha)
 		find_path_ACO(v, 0, dane, alpha, betha);
 		dane->dist += dane->matrix[v][dane->path[dane->vnumber-1]];
 		avrg += dane->dist;
-		if ((j+1) % 1000 == 0) {
-			cout << j + 1 << " " << mini << " " << dane->dist << " srednia:" << avrg/1000 << endl;
+		if ((j+1) % 500 == 0) {
+			cout << j + 1 << " " << mini << " " << dane->dist << " srednia:" << avrg/500 << endl;
 			//show1(dane);
 			avrg = 0.0;
 		}

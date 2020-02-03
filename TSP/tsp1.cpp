@@ -73,7 +73,7 @@ void distance(Dane* dane)
 void find_path(int v, Dane* dane, int counter)
 {
 	int i, j;
-	double min = 9999;
+	double min = 999999999;
 	dane->visited[v] = 1;
 	dane->path[counter++] = v;
 	for (j = 0; j < dane->vnumber; j++)
