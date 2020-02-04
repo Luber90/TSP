@@ -1,0 +1,10 @@
+tsp1000 - a=1.2 b=4 32025 optimum: 24724
+tsp500- a=1.2 b=3.6 100844 optimum: 84585
+tsp250- a=1 b=3 14259 optimum: 12642
+berlin52- a=1 b=1 7697 optimum: 7544 
+bier127- a=? b=? 130000 optimum: 118293
+bayg29 - a=1 b=1 9193 optimum: 1610
+pr107 - a=1 b=5 49039 optimum: 44303
+ulysses22 - a=1 b=1 7604 optimum: 7013
+eil51 - a=1 b=1 440 optimum: 425
+pr76 a=1 b=1.3 125648 optimum: 108k
